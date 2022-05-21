@@ -16,7 +16,7 @@ MyContainer2(
     ),
     child: Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
+        horizontal: 14.0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

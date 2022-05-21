@@ -25,7 +25,7 @@ class _HomePageState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      body: HomePage(),
+      body: _pages[0],
       bottomNavigationBar: BottomNavigationBar(
         selectedFontSize: 12,
         unselectedFontSize: 12,

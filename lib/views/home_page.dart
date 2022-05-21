@@ -32,14 +32,9 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.black,
               ),
             ),
+            pinned: true,
             floating: true,
-          ),
-          SliverBarChart(
-            barWidget: BarChartWidget(
-                minHeight: 79,
-                maxHeight: 111,
-                barValues: [BarChartData(x: "2020", y: 20)],
-                isScrolling: false),
+            expandedHeight: 20,
           ),
           SliverFillRemaining(
             child: Padding(
@@ -86,40 +81,49 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    MyContainer( "image1.png",60, "Production Name That is Long",),
-
-                    MyContainer("image2.png", 9, "What has bee seen very very long te.",),
-                  
+                    MyContainer(
+                      "image1.png",
+                      10,
+                      "Production Name That is Long",
+                    ),
+                    MyContainer(
+                      "image2.png",
+                      10,
+                      "What has bee seen very very",
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      children: [
-                        MyContainer3(
-                          ColorConst.contaBackColor1,
-                          ColorConst.contaBackColor12,
-                          "Vector.png",
-                          "My network",
-                          "Connected and grow",
-                          "your network",
-                        ),
-                        MyContainer3(
-                          ColorConst.contaBackColor2,
-                          ColorConst.contaBackColor21,
-                          "Vector2.png",
-                          "Quick hire",
-                          "Hire someone",
-                          "quickly today",
-                        ),
-                        MyContainer3(
-                          ColorConst.contaBackColor3,
-                          ColorConst.contaBackColor31,
-                          "Sub.png",
-                          "Keep your CV",
-                          "updated to get",
-                          "the best offers",
-                        )
-                      ],
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          MyContainer3(
+                            ColorConst.contaBackColor1,
+                            ColorConst.contaBackColor12,
+                            "Vector.png",
+                            "My network",
+                            "Connected and grow",
+                            "your network",
+                          ),
+                          MyContainer3(
+                            ColorConst.contaBackColor2,
+                            ColorConst.contaBackColor21,
+                            "Vector2.png",
+                            "Quick hire",
+                            "Hire someone",
+                            "quickly today",
+                          ),
+                          MyContainer3(
+                            ColorConst.contaBackColor3,
+                            ColorConst.contaBackColor31,
+                            "Sub.png",
+                            "Keep your CV",
+                            "updated to get",
+                            "the best offers",
+                          )
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -133,5 +137,79 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  
+
+  Container MyContainer(
+    String images,
+    double width,
+    String name,
+  ) {
+    return Container(
+      height: 80,
+      width: 400,
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        color: ColorConst.contbackColor,
+      ),
+      child: Row(
+        // mainAxisAlignment: MainAxisAlignment,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 75,
+            width: 80,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/$images",
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
+                child: Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 200,
+                          child: Text(
+                            name,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          "Sweden Jan 14, 2022 - Feb 23, 2023 ",
+                          style: TextStyle(fontSize: 10, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: width,
+                    ),
+                    const Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.black,
+                      size: 18,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
