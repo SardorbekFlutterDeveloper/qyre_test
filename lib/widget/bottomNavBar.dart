@@ -25,42 +25,37 @@ class _HomePageState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      body: Column(),
+      body: HomePage(),
       bottomNavigationBar: BottomNavigationBar(
         selectedFontSize: 12,
         unselectedFontSize: 12,
         backgroundColor: Color(0xff111111),
-        type: BottomNavigationBarType.fixed,
-        
+        type: BottomNavigationBarType.shifting,
+
         // currentIndex: currentIndex,
         items: [
           BottomNavigationBarItem(
+            backgroundColor: Color(0xff111111),
             label: "",
-            icon: 
-                  SvgPicture.asset(
-                      "assets/svg/home.svg",
-                       color: Colors.white,
-                  ),
-                
+            icon: Image.asset(
+              "assets/images/home.png",
+              color: Colors.white,
+            ),
           ),
           BottomNavigationBarItem(
-            label: "",
-            icon: 
-                  SvgPicture.asset(
-                      "assets/svg/teng.svg", color: Colors.white,
-                  )
-                
-          ),
+              backgroundColor: Color(0xff111111),
+              label: "",
+              icon: Image.asset(
+                "assets/images/teng.png",
+                color: Colors.white,
+              )),
           BottomNavigationBarItem(
-            label: "",
-            icon: 
-                  SvgPicture.asset(
-                      "assets/images/not.svg",
-                       color: Colors.white,
-                  )
-                
-          ),
-         
+              backgroundColor: Color(0xff111111),
+              label: "",
+              icon: Image.asset(
+                "assets/images/not.png",
+                color: Colors.white,
+              )),
         ],
       ),
     );
