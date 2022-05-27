@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qyre_test/routes/routes.dart';
 
 import 'package:qyre_test/views/home_page.dart';
+import 'package:qyre_test/views/test.dart';
 import 'package:qyre_test/widget/bottomNavBar.dart';
 
 void main() {
@@ -22,10 +23,10 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: BottomNavBar(),
+      // home: HomePage(),
 
-      // initialRoute:  "/",
-      // onGenerateRoute: _forRoute.routeGenerate,
+      initialRoute:  "/",
+      onGenerateRoute: _forRoute.routeGenerate,
 
     );
   }
